@@ -14,6 +14,7 @@
 
 // smooth scroll
 $(document).ready(function(){
+	$(window).scrollTop(0);
 	$(".nav-link").on('click', function(event) {
 
     	if (this.hash !== "") {
@@ -30,3 +31,17 @@ $(document).ready(function(){
       	} 
     });
 });
+
+
+$(window).scroll(function() {
+	if ($(window).scrollTop() > 500) {
+		$('.back-to-top').addClass('show');
+	} else {
+		$('.back-to-top').removeClass('show');
+	}
+	if ($(window).scrollTop() > 50) {
+		$('.navbar').css("background","#fff");
+	}else{
+		$('.navbar').css("background","url('../imgs/background-body.jpg')");
+	} 
+  });
